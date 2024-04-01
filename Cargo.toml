@@ -1,6 +1,6 @@
 [package]
 name = "scnd"
-version = "0.6.0"
+version = "0.6.1"
 authors = ["nullsystem <15316579+nullsystem@users.noreply.github.com>"]
 edition = "2021"
 description = "Notification daemon that notifies you when your selected game(s) and/or server(s) gets some player activity"
