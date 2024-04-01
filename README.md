@@ -1,8 +1,8 @@
 # scnd - Steam (Games) Counter Notification Daemon
 scnd is a notification daemon written in Rust that notifies you when your selected game(s) gets some player activity
 
-* Current release: v0.0.5 - Alpha
-* (In-Development) Next release: v0.6.0 - Beta
+* Current release: v0.6.0 - Beta
+* (In-Development) Next release: v0.6.1 - Beta
 
 ## License
 scnd is released under the [ISC License](https://www.isc.org/licenses/).
