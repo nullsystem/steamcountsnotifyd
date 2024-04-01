@@ -167,6 +167,28 @@ async fn game_count_get(
             Ok(text) => match serde_json::from_str(&text) {
                 Ok(text_json) => {
                     let text_json: serde_json::Value = text_json;
+
+                    let mut json_is_ok = false;
+                    match text_json.as_object() {
+                        Some(obj_json) => {
+                            if obj_json.contains_key("response") {
+                                match obj_json["response"].as_object() {
+                                    Some(obj_response_json) => {
+                                        if obj_response_json.contains_key("player_count") {
+                                            json_is_ok = true;
+                                        }
+                                    }
+                                    None => (),
+                                }
+                            }
+                        }
+                        None => (),
+                    }
+                    if !json_is_ok {
+                        eprintln!("ERROR: Malformed JSON response");
+                        return Ok(());
+                    }
+
                     let count = text_json["response"]["player_count"]
                         .to_string()
                         .parse::<u32>()
